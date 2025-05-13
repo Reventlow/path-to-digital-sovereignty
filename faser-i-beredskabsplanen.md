@@ -1,3 +1,6 @@
+| [Fase 1: Observation »](fase-1-observation-og-forberedende-overvågning.md) | [Faseovergang og kriterier »](faseovergang-og-eskalationskriterier.md) |
+|:-------------------------------------------------------------------------|----------------------------------------------------------------------:|
+
 # Faser i Beredskabsplanen
 
 For bedre at kunne afstemme indsatsen med trusselsbilledet arbejder vi med en fem-faset model. Hver fase har sit eget fokus, tilpasset trusselsniveauet og organisationens aktuelle behov:
@@ -47,3 +50,6 @@ For bedre at kunne afstemme indsatsen med trusselsbilledet arbejder vi med en fe
 - Nødløsninger iværksættes, f.eks. papirbaserede skemaer og kommunikation uden cloud-tjenester.
 - Målet er at opretholde minimumsdrift og genetablere stabilitet hurtigst muligt.
 - Plan for genetablering af systemer igangsættes, når situationen tillader det.
+
+| [Fase 1: Observation »](fase-1-observation-og-forberedende-overvågning.md) | [Faseovergang og kriterier »](faseovergang-og-eskalationskriterier.md) |
+|:-------------------------------------------------------------------------|----------------------------------------------------------------------:|

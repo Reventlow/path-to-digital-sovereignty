@@ -1,3 +1,6 @@
+| [« Fase 3](fase-3-blød-overgang.md) | [Næste: Fase 5 »](fase-5-systemfejl-og-nødprocedurer.md) |
+|:-----------------------------------|--------------------------------------------------------:|
+
 # Fase 4: Akut overgang
 
 ## Fasedefinition
@@ -63,3 +66,6 @@ Alle tilgængelige ressourcer mobiliseres for hurtigst muligt at implementere de
 - Daglige evalueringer af fremdrift og kapacitetsbehov
 - Løbende risikovurdering af prioriterede migrationsopgaver
 - Udarbejdelse af handlings planer for overgangen til Fase 5, hvis situationen forværres yderligere
+
+| [« Fase 3](fase-3-blød-overgang.md) | [Næste: Fase 5 »](fase-5-systemfejl-og-nødprocedurer.md) |
+|:-----------------------------------|--------------------------------------------------------:|

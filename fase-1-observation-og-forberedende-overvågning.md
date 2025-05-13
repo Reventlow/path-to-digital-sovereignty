@@ -1,4 +1,5 @@
-# Fase 1: Observation og Forberedende Overvågning
+| [« Oversigt](faser-i-beredskabsplanen.md) | [Næste: Fase 2 »](fase-2-planlægningsfase.md) |
+|:------------------------------------------|----------------------------------------------:|
 
 ## Fasedefinition
 
@@ -39,3 +40,6 @@ Fase 1 repræsenterer det laveste trusselsniveau. Her vurderes risikoen for tab 
 - Lav trussel: Ingen aktioner iværksættes
 - Overvågning og bevidsthed prioriteres over teknisk forberedelse
 - Næste fase (Fase 2) aktiveres ved ændret politisk, teknisk eller kommerciel situation
+
+| [« Oversigt](faser-i-beredskabsplanen.md) | [Næste: Fase 2 »](fase-2-planlægningsfase.md) |
+|:------------------------------------------|----------------------------------------------:|
