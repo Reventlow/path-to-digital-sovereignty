@@ -218,15 +218,6 @@ def compile_latex_to_pdf(tex_file):
         logger.error(f"Error during PDF compilation: {str(e)}")
         return False
 
-def clean_auxiliary_files():
-    """Clean up auxiliary LaTeX files"""
-    extensions = ['.aux', '.log', '.out', '.toc']
-    for ext in extensions:
-        aux_file = TEX_FILE.replace('.tex', ext)
-        if os.path.exists(aux_file):
-            os.remove(aux_file)
-    logger.info("Cleaned up auxiliary files")
-
 def main():
     """Main function to convert Markdown to PDF"""
     logger.info("Starting conversion process")
@@ -235,19 +226,17 @@ def main():
     tex_file = convert_md_to_tex()
     
     if compile_latex_to_pdf(tex_file):
-        # Copy PDF to parent directory for easier access
-        pdf_path = os.path.join(OUTPUT_DIR, 'beredskabsplan.pdf')
-        if os.path.exists(pdf_path):
-            shutil.copy2(pdf_path, '../beredskabsplan.pdf')
-            logger.info("PDF copied to repository root")
-        else:
-            logger.error(f"PDF file not found at {pdf_path}")
-        
-        # Clean up
-        clean_auxiliary_files()
         logger.info("Conversion completed successfully!")
     else:
         logger.error("PDF compilation failed")
+
+    # Copy PDF to parent directory for easier access
+    pdf_path = os.path.join(OUTPUT_DIR, 'beredskabsplan.pdf')
+    if os.path.exists(pdf_path):
+        shutil.copy2(pdf_path, '../beredskabsplan.pdf')
+        logger.info("PDF copied to repository root")
+    else:
+        logger.error(f"PDF file not found at {pdf_path}")
 
 if __name__ == "__main__":
     main()
