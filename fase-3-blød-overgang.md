@@ -1,3 +1,6 @@
+| [« Fase 2](fase-2-planlægningsfase.md) | [Næste: Fase 4 »](fase-4-akut-overgang.md) |
+|:---------------------------------------|------------------------------------------:|
+
 # Fase 3: Blød overgang
 
 ## Fasedefinition
@@ -80,3 +83,6 @@ Målet er at reducere kritiske afhængigheder og samtidig sikre, at forandringer
 - Løbende vurdering af om tempoet i overgangen skal øges
 - Risikoanalyse for hver større ændring, der implementeres
 - Udarbejdelse af fallback-planer i tilfælde af uforudsete udfordringer
+
+| [« Fase 2](fase-2-planlægningsfase.md) | [Næste: Fase 4 »](fase-4-akut-overgang.md) |
+|:---------------------------------------|------------------------------------------:|

@@ -1,3 +1,6 @@
+| [« Fase 1](fase-1-observation-og-forberedende-overvågning.md) | [Næste: Fase 3 »](fase-3-blød-overgang.md) |
+|:--------------------------------------------------------------|--------------------------------------------:|
+
 # Fase 2: Planlægningsfase
 
 ## Fasedefinition
@@ -135,3 +138,6 @@ Arbejdsgruppen bør:
 - Ingen akutte handlinger tages endnu
 - Fokus på dokumentation, analyse og samarbejde
 - Planen evalueres og opdateres løbende ved ændring i trusselsbilledet
+
+| [« Fase 1](fase-1-observation-og-forberedende-overvågning.md) | [Næste: Fase 3 »](fase-3-blød-overgang.md) |
+|:--------------------------------------------------------------|--------------------------------------------:|

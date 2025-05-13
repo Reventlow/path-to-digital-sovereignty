@@ -1,3 +1,6 @@
+| [« Fase 4](fase-4-akut-overgang.md) | [Faseovergang og kriterier »](faseovergang-og-eskalationskriterier.md) |
+|:-----------------------------------|----------------------------------------------------------------------:|
+
 # Fase 5: Systemfejl og Nødprocedurer
 
 ## Fasedefinition
@@ -71,3 +74,6 @@ Situationen er **indtruffet uden varsel**. Kritiske systemer er utilgængelige, 
 - Overvågning af fysisk sikkerhed og adgangsforhold
 - Løbende vurdering af, hvornår overgangen til genetableringsfase kan påbegyndes
 - Evaluering og prioritering af hvilke systemer, der genetableres først
+
+| [« Fase 4](fase-4-akut-overgang.md) | [Faseovergang og kriterier »](faseovergang-og-eskalationskriterier.md) |
+|:-----------------------------------|----------------------------------------------------------------------:|

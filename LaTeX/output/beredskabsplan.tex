@@ -1,0 +1,1212 @@
+\documentclass[a4paper,11pt]{book}
+
+% Required packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}  % Danish language support
+\usepackage{lmodern}        % Modern Latin font
+\usepackage{geometry}       % Page geometry
+\usepackage{graphicx}       % Images
+\usepackage{hyperref}       % Hyperlinks
+\usepackage{xcolor}         % Colors
+\usepackage{titlesec}       % Title formatting
+\usepackage{enumitem}       % List customization
+\usepackage{fancyhdr}       % Headers and footers
+\usepackage{tcolorbox}      % Colored boxes
+\usepackage{listings}       % Code listings
+\usepackage{microtype}      % Typography improvements
+\usepackage{booktabs}       % Better tables
+
+% Page geometry
+\geometry{
+    a4paper,
+    top=2.5cm,
+    bottom=2.5cm,
+    left=3cm,
+    right=3cm,
+    headheight=14pt
+}
+
+% Colors
+\definecolor{primary}{RGB}{0, 60, 120}   % Dark blue
+\definecolor{secondary}{RGB}{0, 110, 180} % Medium blue
+\definecolor{accent}{RGB}{0, 150, 200}    % Light blue
+\definecolor{light}{RGB}{240, 245, 250}   % Very light blue
+\definecolor{dark}{RGB}{50, 50, 50}       % Dark gray
+
+% Hyperlink styling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=secondary,
+    urlcolor=accent,
+    citecolor=secondary,
+    pdfauthor={IT-Beredskab},
+    pdftitle={IT-Beredskabsplan},
+    pdfsubject={Beredskabsplan for IT-systemer},
+    pdfkeywords={IT, beredskab, krise, planlægning}
+}
+
+% Title formatting
+% Modified title formatting for chapters (without "Chapter X")
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries\color{primary}}
+{}{0pt}{\Huge}
+
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{secondary}}
+{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{secondary}}
+{\thesubsection}{1em}{}
+
+% Headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
+\fancyhead[LO]{\textit{\nouppercase{\rightmark}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Box for important notes
+\newtcolorbox{infobox}{
+    colback=light,
+    colframe=accent,
+    boxrule=0.5pt,
+    arc=3mm,
+    fonttitle=\bfseries,
+    top=3mm,
+    bottom=3mm,
+    left=3mm,
+    right=3mm
+}
+
+% Code listing style
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{light},
+    frame=single,
+    framesep=3pt,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{accent}{$\hookrightarrow$}\space},
+    numbers=left,
+    numberstyle=\tiny\color{dark},
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    captionpos=b,
+    keywordstyle=\color{secondary}\bfseries,
+    commentstyle=\color{dark}\itshape,
+    stringstyle=\color{accent}
+}
+
+% Begin document
+\begin{document}
+
+% Title page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries IT-Beredskabsplan\par}
+    \vspace{1cm}
+    {\Large En planlægningsmetode ved tab af adgang til IT-systemer\par}
+    \vspace{2cm}
+    
+    \vspace{2cm}
+    {\Large\itshape En fem-faset plan for krisehåndtering\par}
+    \vfill
+    
+    % Bottom of the page
+    {\large \today\par}
+\end{titlepage}
+
+% Table of contents
+\tableofcontents
+\newpage
+
+% Main content - will be replaced by the Python script
+\chapter{Faser i Beredskabsplanen}\label{faser-i-beredskabsplanen}
+
+For bedre at kunne afstemme indsatsen med trusselsbilledet arbejder vi
+med en fem-faset model. Hver fase har sit eget fokus, tilpasset
+trusselsniveauet og organisationens aktuelle behov:
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Fase 1: Ingen handling
+nødvendig}\label{fase-1-ingen-handling-nuxf8dvendig}
+
+\begin{itemize}
+\tightlist
+\item
+  Truslen vurderes som så usandsynlig, at ingen forberedelse er
+  nødvendig.
+\item
+  Fokus på opmærksomhed, men ingen tekniske eller organisatoriske tiltag
+  igangsættes.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Fase 2: Planlægningsfase}\label{fase-2-planluxe6gningsfase}
+
+\begin{itemize}
+\tightlist
+\item
+  Truslen er stadig usandsynlig, men tilstrækkelig til at
+  beredskabsplaner udarbejdes.
+\item
+  Overblik over afhængigheder, systemer og nødvendige tilpasninger
+  dokumenteres.
+\item
+  Projektet offentliggøres muligvis i open source-format for at styrke
+  samarbejde og samfundsberedskab.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Fase 3: Blød overgang}\label{fase-3-bluxf8d-overgang}
+
+\begin{itemize}
+\item
+  Truslen er sandsynlig nok til, at man begynder en gradvis transition.
+\item
+  Fokus på balancering af økonomi og organisatorisk forandringsledelse.
+\item
+  Pilottests igangsættes, fx med:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Linux på klientmaskiner
+  \item
+    Alternativ kontorpakke (LibreOffice, OnlyOffice, Collabora)
+  \item
+    Lokal e-mailserver
+  \item
+    Udskiftning af cloud-tjenester med lokale alternativer
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Fase 4: Akut overgang}\label{fase-4-akut-overgang}
+
+\begin{itemize}
+\tightlist
+\item
+  Truslen vurderes som umiddelbar og troværdig.
+\item
+  Alle ressourcer mobiliseres til hurtig implementering af planlagte
+  løsninger.
+\item
+  Kritiske tjenester migreres under tidspres for at sikre fortsat drift.
+\item
+  Nødprocedurer for områder uden hurtige løsninger aktiveres.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Fase 5: Systemfejl og
+nødprocedurer}\label{fase-5-systemfejl-og-nuxf8dprocedurer}
+
+\begin{itemize}
+\tightlist
+\item
+  Situationen er indtruffet uden varsel.
+\item
+  Nødløsninger iværksættes, f.eks. papirbaserede skemaer og
+  kommunikation uden cloud-tjenester.
+\item
+  Målet er at opretholde minimumsdrift og genetablere stabilitet
+  hurtigst muligt.
+\item
+  Plan for genetablering af systemer igangsættes, når situationen
+  tillader det.
+\end{itemize}
+
+\newpage
+
+\chapter{Fase 1: Observation og Forberedende
+Overvågning}\label{fase-1-observation-og-forberedende-overvuxe5gning}
+
+\section{Fasedefinition}\label{fasedefinition}
+
+Fase 1 repræsenterer det laveste trusselsniveau. Her vurderes risikoen
+for tab af adgang til amerikansk software, tjenester eller licenser som
+\textbf{meget usandsynlig}. Det betyder, at der \textbf{ikke igangsættes
+nogen tekniske eller organisatoriske ændringer}. Formålet med denne fase
+er at sikre opmærksomhed, skabe en bevidsthed om potentielle
+afhængigheder og opretholde en basal informationsberedskab i
+organisationen.
+
+\section{Overordnede handlinger}\label{overordnede-handlinger}
+
+\subsection{Dokumentation af nuværende
+infrastruktur}\label{dokumentation-af-nuvuxe6rende-infrastruktur}
+
+\begin{itemize}
+\item
+  Hvis der ikke foreligger en velstruktureret og opdateret dokumentation
+  over infrastrukturen, bør der oprettes et grundlæggende overblik med
+  følgende elementer:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Hardware (servere, klienter, netværksudstyr, mobile enheder)
+  \item
+    Software (installerede systemer og applikationer, versioner og
+    konfigurationer)
+  \item
+    Licenser og abonnementer (inkl. udløbsdatoer og
+    leverandørbetingelser)
+  \item
+    Certifikater og adgangskoder (opbevares sikkert og adskilt, fx i
+    password manager)
+  \item
+    Eksterne vedligeholdelsespartnere og serviceaftaler
+  \end{itemize}
+\item
+  Identificere kontaktpersoner, der er ansvarlige for beredskabsplanens
+  videreførelse, hvis trusselsniveauet ændrer sig
+\item
+  Sikre opbevaring og synlighed af eksisterende beredskabsplaner (fx
+  fase 2--5)
+\item
+  Orientere relevante ledelsesniveauer om eksistensen af
+  beredskabsmodellen
+\item
+  Vurdere behovet for fremtidig kommunikation eller informationsstrategi
+\item
+  Følge relevante nyhedsstrømme, trusselsrapporter eller politiske
+  signaler der kan påvirke IT-afhængigheder
+\end{itemize}
+
+\section{Kommunikation}\label{kommunikation}
+
+\begin{itemize}
+\tightlist
+\item
+  Ingen bred intern eller ekstern kommunikation
+\item
+  Informationsniveau begrænses til beredskabsansvarlige og evt.
+  topledelse
+\item
+  Forberede skabeloner til fremtidig eskalationskommunikation
+\end{itemize}
+
+\section{Output fra denne fase}\label{output-fra-denne-fase}
+
+\begin{itemize}
+\tightlist
+\item
+  Navngivne kontaktpersoner og ansvarlige
+\item
+  Journalisering af beslutning om at forblive i fase 1
+\item
+  Notat om næste vurderingstidspunkt (f.eks. hvert kvartal eller ved
+  specifik geopolitisk ændring)
+\end{itemize}
+
+\section{Risikostyring i denne fase}\label{risikostyring-i-denne-fase}
+
+\begin{itemize}
+\tightlist
+\item
+  Lav trussel: Ingen aktioner iværksættes
+\item
+  Overvågning og bevidsthed prioriteres over teknisk forberedelse
+\item
+  Næste fase (Fase 2) aktiveres ved ændret politisk, teknisk eller
+  kommerciel situation
+\end{itemize}
+
+\newpage
+
+\chapter{Fase 2: Planlægningsfase}\label{fase-2-planluxe6gningsfase}
+
+\section{Fasedefinition}\label{fasedefinition}
+
+I denne fase er truslen om licens- eller tjenesteafbrydelse stadig
+usandsynlig, men vurderes som tilstrækkeligt realistisk til, at der bør
+udarbejdes kontingensplaner og tekniske overvejelser. Formålet er at
+dokumentere og analysere vores afhængighed af amerikansk-baserede
+teknologier og forberede strategier til at kunne håndtere en potentiel
+afbrydelse.
+
+\section{Overordnede handlinger}\label{overordnede-handlinger}
+
+\subsection{System- og
+tjenesteidentifikation}\label{system--og-tjenesteidentifikation}
+
+\begin{itemize}
+\tightlist
+\item
+  Identificere alle kritiske systemer og tjenester afhængige af
+  amerikanske leverandører (Microsoft, Apple, Google, Cisco m.fl.)
+\end{itemize}
+
+\subsection{Juridisk og teknisk
+vurdering}\label{juridisk-og-teknisk-vurdering}
+
+\begin{itemize}
+\tightlist
+\item
+  Vurdere juridiske og tekniske muligheder for erstatning eller
+  afkobling
+\end{itemize}
+
+\subsection{Udkast til
+migreringsplaner}\label{udkast-til-migreringsplaner}
+
+\begin{itemize}
+\item
+  Udarbejde udkast til migreringsplaner for (inklusive øvrige
+  afhængigheder, værktøjer og systemnære komponenter):
+
+  \begin{itemize}
+  \item
+    Operativsystemer
+  \item
+    Kontorpakker
+  \item
+    E-mail og kalender
+  \item
+    Autentificering og adgangsstyring
+  \item
+    Cloud-lagring og samarbejdsværktøjer
+  \item
+    Netværksudstyr, telefoni og mobile løsninger (inkl. vurdering af
+    afhængighed af Apple og Android enheder og mulige alternativer som
+    Fairphone, /e/OS eller Linux-baserede systemer)
+  \item
+    Backup-løsninger og lagring
+  \item
+    Databaser
+  \item
+    DNS
+  \item
+    Firmwareopdateringer (BIOS, UEFI, drivere og anden enhedsnær
+    software med afhængighed af producentens infrastruktur)
+  \item
+    Øvrige specialiserede applikationer afhængigt af organisationens
+    behov, f.eks.:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      AI-værktøjer
+    \item
+      Grafisk software
+    \item
+      Videoredigering
+    \item
+      Overvågning og adgangskontrol
+    \item
+      CAD-software
+    \item
+      Social media-værktøjer (EU-venlige alternativer)
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\section{Teknologiske alternativer
+(eksempler)}\label{teknologiske-alternativer-eksempler}
+
+\begin{quote}
+\textbf{Bemærkning:} Enkelte af de foreslåede løsninger har oprindelse i
+USA (f.eks. Keycloak, FreeIPA, Jitsi, GitLab CE, Ansible, Puppet), men
+er fuldt open source og kan selvhostes uden afhængighed af kommercielle
+tjenester eller licensbindinger. De er medtaget i kraft af deres
+robusthed, modenhed og uafhængighed i driftsmiljøer. Målet er ikke
+fuldstændig isolation, men reduktion af kritisk afhængighed.
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Operativsystem:} Linux Mint, Debian eller Arch i testmiljø
+\item
+  \textbf{Kontorpakke:} LibreOffice, OnlyOffice eller Collabora
+\item
+  \textbf{E-mail:} Dovecot + Postfix, evt. i kombination med Nextcloud
+  Kalender og Kontakter
+\item
+  \textbf{AD/Azure AD:} Keycloak og FreeIPA
+\item
+  \textbf{Cloud/SharePoint:} Nextcloud
+\item
+  \textbf{Kommunikation (Teams):} Jitsi og Matrix
+\item
+  \textbf{GitHub:} Gitea eller selvhostet GitLab CE
+\item
+  \textbf{SCCM:} Ansible, shell-scripts eller Puppet
+\item
+  \textbf{ERP/Navision:} Odoo, Dolibarr, Tryton
+\item
+  \textbf{Database:} PostgreSQL, MariaDB, MySQL (alle open source og
+  EU-venlige)
+\item
+  \textbf{Backup-løsninger:} BorgBackup, Restic, Duplicity, eller Veeam
+  med lokal lagring
+\item
+  \textbf{Mobile enheder:} Fairphone med /e/OS eller Ubuntu Touch,
+  PinePhone, Librem 5
+\end{itemize}
+
+\section{Kommunikation}\label{kommunikation}
+
+Etablering af en klar kommunikationsplan er central i denne fase og skal
+sikre, at information om planen, dens formål og forløb bliver
+kommunikeret effektivt og rettidigt til alle interessenter.
+
+Kommunikationen bør:
+
+\begin{itemize}
+\tightlist
+\item
+  Udformes som en plan for internt og eksternt beredskab
+\item
+  Understøtte gennemsigtighed og tillid til planens formål og metode
+\item
+  Muliggøre videndeling og samarbejde med andre organisationer og
+  open-source-miljøer
+\item
+  Formidle opdateringer løbende gennem passende kanaler
+\item
+  Publicering af planen i open source-format (f.eks. via GitHub), med
+  henblik på at styrke gennemsigtighed og tillid til planens formål og
+  metode. Dette vil samtidig gøre det muligt for andre organisationer at
+  kommentere, genbruge og bidrage til indholdet på tværs af sektorer og
+  landegrænser.
+\item
+  Starte kontakt til andre organisationer og open-source-miljøer for
+  videndeling og fælles udvikling
+\end{itemize}
+
+\section{Arbejdsgruppe}\label{arbejdsgruppe}
+
+Det anbefales at oprette en tværfaglig arbejdsgruppe med repræsentanter
+fra relevante dele af organisationen. Denne gruppe skal understøtte
+koordinering, forankring og fremdrift i planens arbejde.
+
+Arbejdsgruppen bør:
+
+\begin{itemize}
+\item
+  Bestå af:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Styregruppe
+  \item
+    Økonomiansvarlige
+  \item
+    Implementeringsansvarlige
+  \item
+    Supportfunktioner
+  \item
+    Kompetenceudviklingsansvarlige
+  \item
+    Ansvarlige for intern kommunikation
+  \end{itemize}
+\item
+  Have ansvar for:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Løbende afstemning med ledelse og nøglepersoner
+  \item
+    Indsamling af feedback fra brugere og medarbejdere
+  \item
+    Vurdering af behov for eksternt samarbejde og koordinering
+  \item
+    Forberedelse af kulturskift og organisatorisk forankring
+  \end{itemize}
+\end{itemize}
+
+\section{Output fra denne fase}\label{output-fra-denne-fase}
+
+\subsection{Dokumenterede
+kontingensplaner}\label{dokumenterede-kontingensplaner}
+
+\begin{itemize}
+\item
+  Dokumenterede kontingensplaner for alle hovedsystemer, herunder for
+  hver løsning:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Valg af alternativ og begrundelse
+  \item
+    Implementeringskrav (teknisk og organisatorisk)
+  \item
+    Migrationsmuligheder og -metoder (eksportfunktioner, scripting,
+    manuel overførsel eller nyopsætning fra bunden)
+  \item
+    IT-kompetenceudvikling: krav til opkvalificering eller behov for
+    outsourcing
+  \item
+    Slutbruger-kompetenceudvikling: træning og support
+  \item
+    Budgetovervejelser: estimater for licens, hardware og drift
+  \item
+    Tidsforbrug og estimeret implementeringshorisont
+  \end{itemize}
+\end{itemize}
+
+\subsection{Pilotprojekter}\label{pilotprojekter}
+
+\begin{itemize}
+\item
+  Pilotprojekter defineret og eventuelt igangsat, herunder:
+
+  \begin{itemize}
+  \item
+    Opsætning af sandkassemiljø til test af FOSS-løsninger uden
+    produktionseksponering
+  \item
+    For hvert pilotprojekt bør følgende defineres:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Hvad måles og testes?
+    \item
+      Hvilke konkrete spørgsmål ønskes besvaret?
+    \item
+      Hvor længe kører forsøget?
+    \item
+      Hvilke systemer og brugergrupper indgår?
+    \item
+      Hvem evaluerer og dokumenterer erfaringerne?
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{Licens- og
+afhængighedskortlægning}\label{licens--og-afhuxe6ngighedskortluxe6gning}
+
+\begin{itemize}
+\item
+  Klarlæggelse af licensforhold og afhængigheder, herunder:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Hvilke systemer kræver løbende licensvalidering?
+  \item
+    Hvilke systemer påvirkes indirekte, hvis licens eller adgang til et
+    andet system ophører?
+  \item
+    Er der afhængigheder til cloud-baserede login-, aktiverings- eller
+    valideringstjenester?
+  \item
+    Hvor hurtigt forventes forskellige systemer at stoppe med at fungere
+    ved licensafbrydelse?
+  \item
+    Hvilke systemer har nødlicens, offline-funktionalitet eller lokale
+    fallback-muligheder?
+  \end{itemize}
+\end{itemize}
+
+\subsection{Kompetenceudvikling}\label{kompetenceudvikling}
+
+\begin{itemize}
+\tightlist
+\item
+  Overblik over nødvendige kompetenceudviklingsområder (f.eks. Linux,
+  Ansible, e-mailadministration)
+\end{itemize}
+
+\section{Risikostyring i forhold til fokus i denne
+fase}\label{risikostyring-i-forhold-til-fokus-i-denne-fase}
+
+\begin{itemize}
+\tightlist
+\item
+  Ingen akutte handlinger tages endnu
+\item
+  Fokus på dokumentation, analyse og samarbejde
+\item
+  Planen evalueres og opdateres løbende ved ændring i trusselsbilledet
+\end{itemize}
+
+\newpage
+
+\chapter{Fase 3: Blød overgang}\label{fase-3-bluxf8d-overgang}
+
+\section{Fasedefinition}\label{fasedefinition}
+
+I denne fase vurderes truslen som \textbf{realistisk og tiltagende}, men
+der er stadig tid til at foretage en planlagt og kontrolleret overgang.
+Der fokuseres på en \textbf{gradvis og økonomisk afbalanceret
+transition}, der tager hensyn til organisationens forandringsparathed og
+ressourcer.
+
+Målet er at reducere kritiske afhængigheder og samtidig sikre, at
+forandringer implementeres med så lav forstyrrelse af driften som
+muligt.
+
+\section{Overordnede handlinger}\label{overordnede-handlinger}
+
+\begin{itemize}
+\item
+  Prioritere kortlægning og migrering af \textbf{kritiske systemer og
+  hardware} først, hvor afhængighed udgør en væsentlig forretningsrisiko
+\item
+  Udarbejde en prioriteringsmatrix for systemer og enheder baseret på:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Kritikalitet for forretningsdrift
+  \item
+    Risiko ved fortsat afhængighed af amerikanske leverandører
+  \item
+    Kompleksitet og omkostninger ved migrering
+  \end{itemize}
+\item
+  Prioritere migrering af systemer med lav kompleksitet og høj risiko
+  ved fortsat afhængighed
+\item
+  Evaluere og justere pilotprojekter, der er igangsat i Fase 2, og
+  begynde udrulning i begrænsede driftsmiljøer
+\item
+  Balancere økonomiske hensyn med nødvendigheden af at sikre
+  uafhængighed
+\item
+  Indgå eventuelle nye aftaler med EU-baserede leverandører og
+  open-source communities
+\end{itemize}
+
+\section{Pilotprojekter og gradvis
+implementering}\label{pilotprojekter-og-gradvis-implementering}
+
+\begin{itemize}
+\item
+  Gennemføre pilotprojekter for eks.:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Linux på klientmaskiner i udvalgte afdelinger
+  \item
+    Alternativ kontorpakke (LibreOffice, OnlyOffice eller Collabora)
+  \item
+    Lokal e-mailserver (Dovecot + Postfix)
+  \item
+    Udskiftning af Teams med Matrix eller Jitsi
+  \item
+    GitHub-migrering til Gitea eller selvhostet GitLab CE
+  \end{itemize}
+\item
+  For hver pilot skal følgende være defineret:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Succeskriterier for drift og brugertilfredshed
+  \item
+    Plan for opfølgning og evaluering
+  \item
+    Økonomisk ramme og tidsplan for eventuel udvidelse
+  \end{itemize}
+\end{itemize}
+
+\section{Kommunikation}\label{kommunikation}
+
+\begin{itemize}
+\tightlist
+\item
+  Tydelig kommunikation til hele organisationen om overgangen
+\item
+  Løbende informationsmøder og statusopdateringer
+\item
+  Synliggørelse af resultater og erfaringer fra pilotprojekter
+\item
+  Forventningsafstemning med brugere om ændringer i arbejdsgange og
+  værktøjer
+\end{itemize}
+
+\section{Kompetenceudvikling}\label{kompetenceudvikling}
+
+\begin{itemize}
+\item
+  Identificere konkrete kompetencebehov i IT-afdelingen i forbindelse
+  med overgangen
+\item
+  Definere hvilke kompetencer der kan opkvalificeres internt, og hvor
+  der er behov for ekstern træning eller konsulentbistand
+\item
+  Udarbejde en træningsplan med:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tidshorisont for opkvalificering
+  \item
+    Økonomisk budget for kompetenceudvikling
+  \item
+    Ansvarlige for gennemførelse af træning
+  \end{itemize}
+\end{itemize}
+
+\section{Arbejdsgruppe og ledelse}\label{arbejdsgruppe-og-ledelse}
+
+\begin{itemize}
+\tightlist
+\item
+  Udvide arbejdsgruppen fra Fase 2 med nøglepersoner fra drift og
+  support
+\item
+  Sikre ledelsesmæssig opbakning til ændringer
+\item
+  Udarbejde detaljerede implementeringsplaner og milepæle
+\end{itemize}
+
+\section{Output fra denne fase}\label{output-fra-denne-fase}
+
+\subsection{Dokumenterede beslutninger og
+milepæle}\label{dokumenterede-beslutninger-og-milepuxe6le}
+
+\begin{itemize}
+\tightlist
+\item
+  Gennemførte og evaluerede pilotprojekter
+\item
+  Migrering af mindre kritiske systemer
+\item
+  Klar og synlig kommunikationsplan for næste skridt
+\item
+  Beslutning om, hvilke områder der er klar til fuld overgang,
+\end{itemize}
+
+\subsection{Næste skridt}\label{nuxe6ste-skridt}
+
+\begin{itemize}
+\tightlist
+\item
+  Beslutning om eventuel eskalering til Fase 4
+\item
+  Planlægning af fuld migrering for prioriterede områder
+\item
+  Kommunikation af næste beslutningspunkt til hele organisationen
+\end{itemize}
+
+\section{Risikostyring i forhold til fokus i denne
+fase}\label{risikostyring-i-forhold-til-fokus-i-denne-fase}
+
+\begin{itemize}
+\tightlist
+\item
+  Aktiv overvågning af trusselsbilledet
+\item
+  Løbende vurdering af om tempoet i overgangen skal øges
+\item
+  Risikoanalyse for hver større ændring, der implementeres
+\item
+  Udarbejdelse af fallback-planer i tilfælde af uforudsete udfordringer
+\end{itemize}
+
+\newpage
+
+\chapter{Fase 4: Akut overgang}\label{fase-4-akut-overgang}
+
+\section{Fasedefinition}\label{fasedefinition}
+
+I denne fase vurderes truslen som \textbf{umiddelbar og troværdig}.
+Situationen kræver øjeblikkelig handling for at sikre fortsat drift og
+mindske risikoen for systemnedbrud eller tab af adgang til essentielle
+tjenester.
+
+Alle tilgængelige ressourcer mobiliseres for hurtigst muligt at
+implementere de løsninger, der er forberedt i tidligere faser. Fokus er
+på at sikre, at kritiske systemer fungerer og er uafhængige af sårbare
+eksterne afhængigheder.
+
+\section{Overordnede handlinger}\label{overordnede-handlinger}
+
+\begin{itemize}
+\tightlist
+\item
+  Indhendt info fra Fase 2 og 3
+\item
+  Prioritere migrering af \textbf{kritiske tjenester} under tidspres
+\item
+  Allokere al tilgængelig IT- og supportkapacitet til opgaven
+\item
+  Aktivere nødprocedurer for områder, hvor migrering ikke kan
+  gennemføres i tide
+\item
+  Suspendere ikke-kritiske projekter for at frigive ressourcer
+\item
+  Ekspresanskaffelse af nødvendigt hardware eller software
+\item
+  Etablere hurtige beslutningsveje og ledelsesmæssig eskalation
+\end{itemize}
+
+\section{Kritiske fokusområder}\label{kritiske-fokusomruxe5der}
+
+\begin{itemize}
+\tightlist
+\item
+  Migrering af e-mail og kommunikation til sikre og kontrollerede
+  løsninger
+\item
+  Sikring af adgangs- og identitetssystemer (f.eks. Keycloak, FreeIPA)
+\item
+  Implementering af lokale fil- og backup-løsninger
+\item
+  Opsætning af interne DNS- og netværkstjenester
+\item
+  Udskiftning af cloud-baserede samarbejdsværktøjer med lokale
+  alternativer (f.eks. Nextcloud)
+\end{itemize}
+
+\section{Kommunikation}\label{kommunikation}
+
+\begin{itemize}
+\tightlist
+\item
+  Kriseinformationsplan aktiveres
+\item
+  Tæt kommunikation mellem IT, ledelse og berørte afdelinger
+\item
+  Kort og klar kommunikation til alle brugere om ændringer og
+  begrænsninger
+\item
+  Brug af alternative kommunikationskanaler, hvis cloud-baserede
+  løsninger fejler
+\end{itemize}
+
+\section{Kompetenceudvikling}\label{kompetenceudvikling}
+
+\begin{itemize}
+\tightlist
+\item
+  Fokus på akut oplæring i de alternative løsninger, der nu
+  implementeres
+\item
+  Udnytte interne superbrugere som støtte til hurtig vidensoverførsel
+\item
+  Afholde korte, fokuserede workshops eller online sessioner for brugere
+  og IT-personale
+\end{itemize}
+
+\section{Arbejdsgruppe og ledelse}\label{arbejdsgruppe-og-ledelse}
+
+\begin{itemize}
+\item
+  Der åbnes op for anvendelse af overarbejde og ekstra ressourcer i
+  denne fase. Ledelsen har samtidig ansvar for at overvåge
+  medarbejdernes belastningsniveau og aktivt forebygge udbrændthed.
+\item
+  Arbejdsgruppen fra Fase 2 aktiveres som den centrale operative enhed i
+  denne fase.
+\item
+  Arbejdsgruppen udvides med:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Direktøren eller en ledelsesrepræsentant med fuldt mandat til at
+    træffe hurtige og afgørende beslutninger.
+  \item
+    Økonomiansvarlige og ressourcestyringsansvarlige for hurtig
+    godkendelse af nødvendige anskaffelser og allokering af midler.
+  \end{itemize}
+\item
+  Arbejdsgruppen har ansvaret for den praktiske eksekvering, mens
+  ledelsesrepræsentanter sikrer hurtig beslutningstagen og fjernelse af
+  organisatoriske barrierer.
+\item
+  Sikre konstant ledelsesopbakning og tilstedeværelse i den operative
+  drift.
+\item
+  Etablere hurtige og effektive beslutningsveje for at kunne reagere på
+  nye udviklinger i realtid.
+\end{itemize}
+
+\section{Output fra denne fase}\label{output-fra-denne-fase}
+
+\begin{itemize}
+\tightlist
+\item
+  Kritiske systemer migreret til sikre og bæredygtige løsninger
+\item
+  Nødprocedurer aktiveret for områder, hvor migrering ikke kunne ske
+\item
+  Kommunikationskanaler etableret og aktivt anvendt
+\item
+  Beredskabsstatus løbende dokumenteret og rapporteret til ledelsen
+\end{itemize}
+
+\section{Risikostyring i forhold til fokus i denne
+fase}\label{risikostyring-i-forhold-til-fokus-i-denne-fase}
+
+\begin{itemize}
+\tightlist
+\item
+  Kontinuerlig overvågning af trusselsbilledet
+\item
+  Daglige evalueringer af fremdrift og kapacitetsbehov
+\item
+  Løbende risikovurdering af prioriterede migrationsopgaver
+\item
+  Udarbejdelse af handlings planer for overgangen til Fase 5, hvis
+  situationen forværres yderligere
+\end{itemize}
+
+\newpage
+
+\chapter{Fase 5: Systemfejl og
+Nødprocedurer}\label{fase-5-systemfejl-og-nuxf8dprocedurer}
+
+\section{Fasedefinition}\label{fasedefinition}
+
+Situationen er \textbf{indtruffet uden varsel}. Kritiske systemer er
+utilgængelige, og adgangen til essentielle IT-tjenester er mistet. Der
+er ikke længere tid eller mulighed for at gennemføre planlagte
+migreringer. Fokus er nu på at sikre absolut minimumsdrift og stabilitet
+gennem nødprocedurer, indtil normale forhold gradvist kan genetableres.
+
+\section{Overordnede handlinger}\label{overordnede-handlinger}
+
+\begin{itemize}
+\tightlist
+\item
+  Udarbejde en prioriteret liste over kritiske driftsfunktioner, som
+  skal opretholdes under alle omstændigheder
+\item
+  Aktivere evt forberedte nødprocedurer fra fase 4
+\item
+  Tage manuelle, papirbaserede arbejdsgange i brug (skemaer,
+  tilstedeværelseslister, manuel registrering af kritiske data)
+\item
+  Etablere lokal kommunikation via ikke-digitale midler eller
+  alternative netværk (radio, SMS, fysisk mødeaktivitet)
+\item
+  Udpege et fysisk samlingspunkt for koordinering og kommunikation
+\item
+  Udpege nøglepersoner med ansvar for hver kritisk driftsfunktion
+\item
+  Sikre fysisk adgang til nødvendige faciliteter og udstyr uden
+  afhængighed af digitale adgangssystemer
+\end{itemize}
+
+\section{Kritiske fokusområder}\label{kritiske-fokusomruxe5der}
+
+\begin{itemize}
+\tightlist
+\item
+  Bevare informationssikkerhed trods manuelle arbejdsgange
+\item
+  Beskytte tilgængeligt data og udstyr mod fysisk tab eller skader
+\item
+  Prioritere ressourcer til de mest nødvendige funktioner (kerneopgaven,
+  sikkerhed, lønudbetaling)
+\item
+  Sørge for fysisk tilstedeværelse af ledelses- og
+  kommunikationsansvarlige
+\item
+  Vurdere muligheder for hurtigst muligt at genetablere
+  kerne-IT-funktioner lokalt uden eksterne afhængigheder
+\end{itemize}
+
+\section{Kommunikation}\label{kommunikation}
+
+\begin{itemize}
+\tightlist
+\item
+  Anvende nødkommunikationsplanen baseret på manuelle og offline-kanaler
+\item
+  Sikre daglige briefinger med statusopdateringer til medarbejdere og
+  interessenter
+\item
+  Udpege en kommunikationsansvarlig til at koordinere og formidle al
+  intern og ekstern kommunikation
+\item
+  Dokumentere alle midlertidige foranstaltninger og beslutninger for
+  senere analyse og evaluering
+\end{itemize}
+
+\section{Kompetenceudvikling og
+support}\label{kompetenceudvikling-og-support}
+
+\begin{itemize}
+\tightlist
+\item
+  Sikre adgang til krisepsykolog eller stresshåndteringsressourcer, hvis
+  krisen trækker ud
+\item
+  Udnytte eksisterende superbrugere og personale med erfaring i manuelle
+  processer
+\item
+  Aktivere backup-ressourcer, herunder pensionerede IT-medarbejdere
+  eller studiejobsøgende med relevant erfaring, hvis muligt. Overvej
+  også at inddrage medarbejdere fra andre afdelinger til at assistere
+  med ikke-komplekse opgaver efter en kort grundtræning.
+\item
+  Fokusere på rolig kriseledelse og støtte til medarbejdere for at undgå
+  panik og forvirring
+\end{itemize}
+
+\section{Arbejdsgruppe og ledelse}\label{arbejdsgruppe-og-ledelse}
+
+\begin{itemize}
+\tightlist
+\item
+  Arbejdsgruppen omdannes til en krisestab med fuldt mandat til at
+  træffe hurtige beslutninger
+\item
+  Overarbejde kan aktiveres for at opretholde kritiske funktioner.
+  Ledelsen har ansvar for at balancere brugen af overarbejde med
+  hensynet til medarbejdernes trivsel og forebyggelse af udbrændthed.
+  Der bør etableres klare rammer for, hvor længe overarbejde kan
+  pålægges uden at iværksætte personalerotation eller inddragelse af
+  backup-ressourcer.
+\item
+  Direktøren eller stedfortræder er til stede fysisk som kriseleder
+\item
+  Alle beslutninger og tiltag skal logges manuelt for senere opfølgning
+  og rapportering
+\end{itemize}
+
+\section{Output fra denne fase}\label{output-fra-denne-fase}
+
+\subsection{Stabilisering og Tilpasning efter
+Krise}\label{stabilisering-og-tilpasning-efter-krise}
+
+\begin{itemize}
+\item
+  Udarbejde en plan for systematisk dokumentation af nye
+  arbejdsprocesser, så erfaringerne fra krisen fastholdes og bliver en
+  integreret del af den fremtidige drift.
+\item
+  Arbejdsgruppen har ansvaret for at lede og koordinere denne fase
+  baseret på organisationens behov og de erfaringer, der er gjort under
+  krisen.
+\item
+  Udarbejde en plan for, hvordan alle medarbejdere løbende får den
+  nødvendige oplæring til at tilpasse sig de nye systemer og
+  arbejdsprocesser.
+\item
+  Vurdere behov for at skabe eller tilpasse eksisterende
+  arbejdsprocesser i alle afdelinger, så de understøtter de
+  implementerede systemer bedst muligt.
+\item
+  HR i samarbejde med afdelingsledere skal udarbejde en plan for
+  håndtering af overarbejde efter krisen, som sikrer:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    At medarbejdere tilbydes mulighed for afspadsering eller
+    kompensation.
+  \item
+    At udbrændthed forebygges gennem planlagt restitution.
+  \item
+    At for mange medarbejdere ikke holder fri samtidig, så
+    organisationens drift kan fortsætte uforstyrret.
+  \end{itemize}
+\item
+  Udarbejdelse af plan for digitalisering og korrekt integration af data
+  indsamlet manuelt under krisesituationen
+\item
+  Udpege ansvarlig for sikring og opbevaring af krisedokumentation til
+  brug i audit og senere evaluering
+\item
+  Opnået opretholdelse af minimumsdrift via nødprocedurer
+\item
+  Nødløsninger dokumenteret og erfaringer opsamlet
+\item
+  Plan for genetablering af systemdrift udarbejdet og igangsat, når
+  situationen tillader det
+\end{itemize}
+
+\section{Risikostyring i forhold til fokus i denne
+fase}\label{risikostyring-i-forhold-til-fokus-i-denne-fase}
+
+\begin{itemize}
+\tightlist
+\item
+  Udarbejde klare kriterier for afslutning af nødprocedurer og
+  overgangen til normaliseret drift
+\item
+  Udarbejde en plan for vedvarende krisedrift, herunder
+  personalerotation, forsyningssikkerhed og fortsat opretholdelse af
+  kerneopgaven
+\item
+  Kontinuerlig vurdering af personalets trivsel og belastning
+\item
+  Overvågning af fysisk sikkerhed og adgangsforhold
+\item
+  Løbende vurdering af, hvornår overgangen til genetableringsfase kan
+  påbegyndes
+\item
+  Evaluering og prioritering af hvilke systemer, der genetableres først
+\end{itemize}
+
+\newpage
+
+\chapter{Licens og Deling}\label{licens-og-deling}
+
+\begin{quote}
+\textbf{Åben anvendelse tilladt:} Denne plan stilles frit til rådighed
+for enhver organisation eller enkeltperson, der ønsker at bruge,
+tilpasse eller videreudvikle den. Det er ikke nødvendigt med tilladelse
+eller kreditering, men feedback, forbedringer samt forslag til
+samarbejde og fælles videreudvikling modtages meget gerne.
+\end{quote}
+
+Dette dokument er tænkt som et bidrag til fælles resiliens i en usikker
+digital verden. Vi tror på, at gennemsigtighed, samarbejde og deling er
+centrale byggesten i opbygningen af digital suverænitet. Derfor lægger
+vi ikke begrænsninger på brugen, og vi byder både offentlige og private
+aktører velkommen til at anvende materialet.
+
+\subsection{Anbefalinger ved genbrug:}\label{anbefalinger-ved-genbrug}
+
+\begin{itemize}
+\tightlist
+\item
+  Tilpas indholdet til egen kontekst og behov.
+\item
+  Del gerne forbedringer eller tilpasninger tilbage til fællesskabet.
+\item
+  Undgå at gengive dokumentet som officiel myndighedsvejledning uden
+  lokal tilpasning.
+\end{itemize}
+
+\subsection{Licens}\label{licens}
+
+Denne plan stilles til rådighed under \textbf{Creative Commons CC0 1.0
+Universal (Public Domain Dedication)}.
+
+\begin{itemize}
+\item
+  \textbf{CC0 betyder:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Du må frit kopiere, ændre, tilpasse og distribuere materialet til
+    ethvert formål, også kommercielt.
+  \item
+    Der kræves ingen kreditering af ophav eller kilde.
+  \end{itemize}
+\end{itemize}
+
+
+\end{document}

@@ -1,0 +1,136 @@
+\documentclass[a4paper,11pt]{book}
+
+% Required packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}  % Danish language support
+\usepackage{lmodern}        % Modern Latin font
+\usepackage{geometry}       % Page geometry
+\usepackage{graphicx}       % Images
+\usepackage{hyperref}       % Hyperlinks
+\usepackage{xcolor}         % Colors
+\usepackage{titlesec}       % Title formatting
+\usepackage{enumitem}       % List customization
+\usepackage{fancyhdr}       % Headers and footers
+\usepackage{tcolorbox}      % Colored boxes
+\usepackage{listings}       % Code listings
+\usepackage{microtype}      % Typography improvements
+\usepackage{booktabs}       % Better tables
+
+% Page geometry
+\geometry{
+    a4paper,
+    top=2.5cm,
+    bottom=2.5cm,
+    left=3cm,
+    right=3cm,
+    headheight=14pt
+}
+
+% Colors
+\definecolor{primary}{RGB}{0, 60, 120}   % Dark blue
+\definecolor{secondary}{RGB}{0, 110, 180} % Medium blue
+\definecolor{accent}{RGB}{0, 150, 200}    % Light blue
+\definecolor{light}{RGB}{240, 245, 250}   % Very light blue
+\definecolor{dark}{RGB}{50, 50, 50}       % Dark gray
+
+% Hyperlink styling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=secondary,
+    urlcolor=accent,
+    citecolor=secondary,
+    pdfauthor={IT-Beredskab},
+    pdftitle={IT-Beredskabsplan},
+    pdfsubject={Beredskabsplan for IT-systemer},
+    pdfkeywords={IT, beredskab, krise, planlægning}
+}
+
+% Title formatting
+% Modified title formatting for chapters (without "Chapter X")
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries\color{primary}}
+{}{0pt}{\Huge}
+
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{secondary}}
+{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{secondary}}
+{\thesubsection}{1em}{}
+
+% Headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
+\fancyhead[LO]{\textit{\nouppercase{\rightmark}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Box for important notes
+\newtcolorbox{infobox}{
+    colback=light,
+    colframe=accent,
+    boxrule=0.5pt,
+    arc=3mm,
+    fonttitle=\bfseries,
+    top=3mm,
+    bottom=3mm,
+    left=3mm,
+    right=3mm
+}
+
+% Code listing style
+\lstset{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{light},
+    frame=single,
+    framesep=3pt,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{accent}{$\hookrightarrow$}\space},
+    numbers=left,
+    numberstyle=\tiny\color{dark},
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    captionpos=b,
+    keywordstyle=\color{secondary}\bfseries,
+    commentstyle=\color{dark}\itshape,
+    stringstyle=\color{accent}
+}
+
+% Begin document
+\begin{document}
+
+% Title page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries IT-Beredskabsplan\par}
+    \vspace{1cm}
+    {\Large En planlægningsmetode ved tab af adgang til IT-systemer\par}
+    \vspace{2cm}
+    
+    \vspace{2cm}
+    {\Large\itshape En fem-faset plan for krisehåndtering\par}
+    \vfill
+    
+    % Bottom of the page
+    {\large \today\par}
+\end{titlepage}
+
+% Table of contents
+\tableofcontents
+\newpage
+
+% Main content - will be replaced by the Python script
+{{CONTENT}}
+
+\end{document}

@@ -1,3 +1,6 @@
+| [« Oversigt](faser-i-beredskabsplanen.md) | [Fase 1: Observation »](fase-1-observation-og-forberedende-overvågning.md) |
+|:------------------------------------------|--------------------------------------------------------------------------:|
+
 # Faseovergang og Eskalationskriterier
 
 Dette dokument definerer konkrete kriterier og observationer, som udløser overgangen mellem faserne i kriseberedskabsplanen. Målet er at sikre rettidig reaktion baseret på faktuelle forhold og risikovurderinger.
@@ -61,3 +64,6 @@ Dette dokument definerer konkrete kriterier og observationer, som udløser overg
 ---
 
 > _Denne plan skal gennemgås og opdateres mindst én gang årligt eller ved væsentlige ændringer i trusselsbilledet._
+
+| [« Oversigt](faser-i-beredskabsplanen.md) | [Fase 1: Observation »](fase-1-observation-og-forberedende-overvågning.md) |
+|:------------------------------------------|--------------------------------------------------------------------------:|
