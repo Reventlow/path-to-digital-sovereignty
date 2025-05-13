@@ -1,6 +1,8 @@
 | [« Oversigt](faser-i-beredskabsplanen.md) | [Næste: Fase 2 »](fase-2-planlægningsfase.md) |
 |:------------------------------------------|----------------------------------------------:|
 
+# Fase 1: Observation og Forberedende Overvågning
+
 ## Fasedefinition
 
 Fase 1 repræsenterer det laveste trusselsniveau. Her vurderes risikoen for tab af adgang til amerikansk software, tjenester eller licenser som **meget usandsynlig**. Det betyder, at der **ikke igangsættes nogen tekniske eller organisatoriske ændringer**. Formålet med denne fase er at sikre opmærksomhed, skabe en bevidsthed om potentielle afhængigheder og opretholde en basal informationsberedskab i organisationen.
