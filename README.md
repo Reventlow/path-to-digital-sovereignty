@@ -39,9 +39,6 @@ Dette dokument er hverken udtryk for antiamerikanske holdninger eller modstand m
 - Politikere og beslutningstagere med interesse for digital suverænitet
 - Open-source-folk og frivillige med interesse for robust IT
 
-## PDF
-Du kan finde en delbar PDF [her](beredskabsplan.pdf)
-
 ## 📚 Indholdsfortegnelse
 
 1. [Faser i Beredskabsplanen (Overblik)](faser-i-beredskabsplanen.md)
@@ -52,3 +49,6 @@ Du kan finde en delbar PDF [her](beredskabsplan.pdf)
 6. [Fase 5 – Systemfejl og Nødprocedurer](fase-5-systemfejl-og-nødprocedurer.md)
 7. [Faseovergang og Eskalationskriterier](faseovergang-og-eskalationskriterier.md)
 8. [Licens og Deling](LICENSE.md)
+
+### PDF
+Du kan finde en delbar PDF [her](beredskabsplan.pdf)
