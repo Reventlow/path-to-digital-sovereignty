@@ -48,6 +48,27 @@ def ensure_directories():
     Path(TEMP_DIR).mkdir(exist_ok=True)
     logger.info(f"Created output directories: {OUTPUT_DIR}, {TEMP_DIR}")
 
+def replace_unicode_symbols(text):
+    """
+    Replace certain Unicode characters with LaTeX equivalents.
+
+    Args:
+        text (str): The input text to modify
+
+    Returns:
+        str: Text with LaTeX replacements
+    """
+
+    # Add more replacements if needed
+    replacements = {
+        "➔": r"$\textrightarrow$",
+    }
+
+    for symbol, latex in replacements.items():
+        text = text.replace(symbol, latex)
+
+    return text
+
 def remove_navigation_text(text):
     """
     Remove navigation text links from a markdown string.
@@ -87,7 +108,8 @@ def convert_markdown_to_latex(markdown_content, output_file=None):
     """
     # Remove navigation headers and footers
     markdown_content = remove_navigation_text(markdown_content)
-    
+    markdown_content = replace_unicode_symbols(markdown_content)
+
     # Write content to a temporary file
     with open('temp_input.md', 'w', encoding='utf-8') as f:
         f.write(markdown_content)
