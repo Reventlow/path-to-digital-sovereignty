@@ -5,14 +5,12 @@
 
 For bedre at kunne afstemme indsatsen med trusselsbilledet arbejder vi med en fem-faset model. Hver fase har sit eget fokus, tilpasset trusselsniveauet og organisationens aktuelle behov:
 
----
 
 ## Fase 1: Ingen handling nødvendig
 
 - Truslen vurderes som så usandsynlig, at ingen forberedelse er nødvendig.
 - Fokus på opmærksomhed, men ingen tekniske eller organisatoriske tiltag igangsættes.
 
----
 
 ## Fase 2: Planlægningsfase
 
@@ -20,7 +18,6 @@ For bedre at kunne afstemme indsatsen med trusselsbilledet arbejder vi med en fe
 - Overblik over afhængigheder, systemer og nødvendige tilpasninger dokumenteres.
 - Projektet offentliggøres muligvis i open source-format for at styrke samarbejde og samfundsberedskab.
 
----
 
 ## Fase 3: Blød overgang
 
@@ -33,7 +30,6 @@ For bedre at kunne afstemme indsatsen med trusselsbilledet arbejder vi med en fe
   - Lokal e-mailserver
   - Udskiftning af cloud-tjenester med lokale alternativer
 
----
 
 ## Fase 4: Akut overgang
 
@@ -42,7 +38,6 @@ For bedre at kunne afstemme indsatsen med trusselsbilledet arbejder vi med en fe
 - Kritiske tjenester migreres under tidspres for at sikre fortsat drift.
 - Nødprocedurer for områder uden hurtige løsninger aktiveres.
 
----
 
 ## Fase 5: Systemfejl og nødprocedurer
 
