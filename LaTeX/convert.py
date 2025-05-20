@@ -224,9 +224,9 @@ def compile_latex_to_pdf(tex_file):
         logger.info(f"Using {latex_cmd} compiler")
 
         # Run LaTeX compiler twice to resolve references
-        for i in range(2):
+        for _ in range(2):
             process = subprocess.run(
-                [latex_cmd, '-interaction=nonstopmode', '-output-directory=' + OUTPUT_DIR, tex_file],
+                [latex_cmd, '-interaction=nonstopmode', f'-output-directory={OUTPUT_DIR}', tex_file],
                 capture_output=True,
                 text=True,
                 check=False
