@@ -1,4 +1,5 @@
 temp/
+output/
 *.aux
 *.log
 *.out
