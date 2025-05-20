@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Installation script for LaTeX converter dependencies
 
 echo "Setting up LaTeX converter environment..."
