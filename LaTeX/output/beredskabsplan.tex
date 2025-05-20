@@ -1,13 +1,24 @@
-\documentclass[a4paper,11pt]{book}
+\documentclass[a4paper,11pt,oneside]{book}
 
-% Required packages
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\newcommand{\doctitle}{IT-Beredskabsplan}
+
 \usepackage[danish]{babel}  % Danish language support
-\usepackage{lmodern}        % Modern Latin font
+
+\usepackage{iftex}          % Check LaTeX-engine
+\ifpdftex
+  \usepackage{libertine}
+  \usepackage{libertinust1math}
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}
+  \setmainfont{Linux Libertine O}[Ligatures=TeX,Scale=1]
+\fi
+
 \usepackage{geometry}       % Page geometry
 \usepackage{graphicx}       % Images
 \usepackage{hyperref}       % Hyperlinks
+\selectlanguage{danish}
 \usepackage{xcolor}         % Colors
 \usepackage{titlesec}       % Title formatting
 \usepackage{enumitem}       % List customization
@@ -41,7 +52,7 @@
     urlcolor=accent,
     citecolor=secondary,
     pdfauthor={IT-Beredskab},
-    pdftitle={IT-Beredskabsplan},
+    pdftitle={\doctitle},
     pdfsubject={Beredskabsplan for IT-systemer},
     pdfkeywords={IT, beredskab, krise, planlægning}
 }
@@ -66,10 +77,12 @@
 % Headers and footers
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
-\fancyhead[LO]{\textit{\nouppercase{\rightmark}}}
-\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L,L]{\textit{\doctitle}} % Left: document title
+\fancyhead[R,R]{\textit{\nouppercase{\leftmark}}}  % Right: chapter title
+\fancyfoot[C]{\thepage}
+% Remove line below if "Kapitel X. {chapter title}" is wanted
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\headrulewidth}{.4pt}
 \renewcommand{\footrulewidth}{0pt}
 
 % Box for important notes
@@ -106,6 +119,10 @@
     stringstyle=\color{accent}
 }
 
+% Undefines tightlist, which is defined by Pandoc when
+% not having blank lines between listitems in markdown
+\def\tightlist{}
+
 % Begin document
 \begin{document}
 
@@ -113,31 +130,31 @@
 \begin{titlepage}
     \centering
     \vspace*{2cm}
-    {\Huge\bfseries IT-Beredskabsplan\par}
+    {\Huge\bfseries \doctitle\par}
     \vspace{1cm}
     {\Large En planlægningsmetode ved tab af adgang til IT-systemer\par}
     \vspace{2cm}
-    
+
     \vspace{2cm}
     {\Large\itshape En fem-faset plan for krisehåndtering\par}
     \vfill
-    
+
     % Bottom of the page
-    {\large \today\par}
+    {\large \today}
 \end{titlepage}
 
+\frontmatter
 % Table of contents
 \tableofcontents
 \newpage
 
+\mainmatter
 % Main content - will be replaced by the Python script
 \chapter{Faser i Beredskabsplanen}\label{faser-i-beredskabsplanen}
 
 For bedre at kunne afstemme indsatsen med trusselsbilledet arbejder vi
 med en fem-faset model. Hver fase har sit eget fokus, tilpasset
 trusselsniveauet og organisationens aktuelle behov:
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \section{Fase 1: Ingen handling
 nødvendig}\label{fase-1-ingen-handling-nuxf8dvendig}
@@ -151,8 +168,6 @@ nødvendig}\label{fase-1-ingen-handling-nuxf8dvendig}
   Fokus på opmærksomhed, men ingen tekniske eller organisatoriske tiltag
   igangsættes.
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \section{Fase 2: Planlægningsfase}\label{fase-2-planluxe6gningsfase}
 
@@ -168,8 +183,6 @@ nødvendig}\label{fase-1-ingen-handling-nuxf8dvendig}
   Projektet offentliggøres muligvis i open source-format for at styrke
   samarbejde og samfundsberedskab.
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \section{Fase 3: Blød overgang}\label{fase-3-bluxf8d-overgang}
 
@@ -194,8 +207,6 @@ nødvendig}\label{fase-1-ingen-handling-nuxf8dvendig}
   \end{itemize}
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
 \section{Fase 4: Akut overgang}\label{fase-4-akut-overgang}
 
 \begin{itemize}
@@ -210,8 +221,6 @@ nødvendig}\label{fase-1-ingen-handling-nuxf8dvendig}
 \item
   Nødprocedurer for områder uden hurtige løsninger aktiveres.
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \section{Fase 5: Systemfejl og
 nødprocedurer}\label{fase-5-systemfejl-og-nuxf8dprocedurer}
@@ -1157,6 +1166,125 @@ fase}\label{risikostyring-i-forhold-til-fokus-i-denne-fase}
 \item
   Evaluering og prioritering af hvilke systemer, der genetableres først
 \end{itemize}
+
+\newpage
+
+\chapter{Faseovergang og
+Eskalationskriterier}\label{faseovergang-og-eskalationskriterier}
+
+Dette dokument definerer konkrete kriterier og observationer, som
+udløser overgangen mellem faserne i kriseberedskabsplanen. Målet er at
+sikre rettidig reaktion baseret på faktuelle forhold og
+risikovurderinger.
+
+\section{\texorpdfstring{Overgang fra Fase 1 \(\textrightarrow\) Fase
+2}{Overgang fra Fase 1 \textbackslash textrightarrow Fase 2}}\label{overgang-fra-fase-1-textrightarrow-fase-2}
+
+\textbf{Fra Observation til Planlægning}
+
+\begin{itemize}
+\tightlist
+\item
+  Geopolitisk udvikling eller lovgivning, der indikerer kommende
+  handels- eller teknologirestriktioner.
+\item
+  Officielle advarsler fra relevante myndigheder (fx PET, FE, EU's
+  cybersikkerhedsagentur ENISA).
+\item
+  Interne tekniske vurderinger viser høj afhængighed af amerikanske
+  eller eksterne leverandører.
+\item
+  Ledelsen beslutter proaktivt at igangsætte planlægning for øget
+  robusthed.
+\end{itemize}
+
+\section{\texorpdfstring{Overgang fra Fase 2 \(\textrightarrow\) Fase
+3}{Overgang fra Fase 2 \textbackslash textrightarrow Fase 3}}\label{overgang-fra-fase-2-textrightarrow-fase-3}
+
+\textbf{Fra Planlægning til Gradvis Implementering}
+
+\begin{itemize}
+\tightlist
+\item
+  Konkrete annonceringer fra leverandører om ændrede licensbetingelser
+  eller ophør af support i nær fremtid.
+\item
+  Dokumenterede afhængigheder vurderes som kritiske uden tilstrækkelige
+  fallback-løsninger.
+\item
+  Nye trusselsvurderinger hæver sandsynligheden for leverandøraftaler
+  ophører.
+\item
+  IT-ledelsen vurderer, at systemkritiske funktioner har utilstrækkelig
+  resiliens.
+\end{itemize}
+
+\section{\texorpdfstring{Overgang fra Fase 3 \(\textrightarrow\) Fase
+4}{Overgang fra Fase 3 \textbackslash textrightarrow Fase 4}}\label{overgang-fra-fase-3-textrightarrow-fase-4}
+
+\textbf{Fra Gradvis Overgang til Akut Krisetilstand}
+
+\begin{itemize}
+\tightlist
+\item
+  Akut forværring af geopolitisk situation eller indførelse af
+  øjeblikkelige sanktioner.
+\item
+  Licenser eller cloud-tjenester afbrydes med kort eller ingen varsel.
+\item
+  Kritiske systemer viser ustabilitet eller reduceret funktionalitet.
+\item
+  Øget risiko for datatab, sikkerhedsbrud eller tab af adgang til
+  nødvendige forretningssystemer.
+\item
+  Direktion beslutter at aktivere Fase 4 for at sikre drift under
+  tidspres.
+\end{itemize}
+
+\section{\texorpdfstring{Overgang fra Fase 4 \(\textrightarrow\) Fase
+5}{Overgang fra Fase 4 \textbackslash textrightarrow Fase 5}}\label{overgang-fra-fase-4-textrightarrow-fase-5}
+
+\textbf{Fra Akut Overgang til Nødprocedurer og Minimumsdrift}
+
+\begin{itemize}
+\tightlist
+\item
+  Kritiske systemer eller adgang til essentielle cloud-tjenester er
+  fuldstændigt tabt.
+\item
+  Der kan ikke opretholdes tilstrækkelig IT-drift trods nødprocedurer i
+  Fase 4.
+\item
+  Kommunikation via digitale kanaler bryder fuldstændigt sammen.
+\item
+  Der er opstået fysisk sikkerhedstrussel eller omfattende
+  forsyningssvigt.
+\end{itemize}
+
+\section{\texorpdfstring{Overgang fra Fase 5 \(\textrightarrow\)
+Genetablering af Normal
+Drift}{Overgang fra Fase 5 \textbackslash textrightarrow Genetablering af Normal Drift}}\label{overgang-fra-fase-5-textrightarrow-genetablering-af-normal-drift}
+
+\textbf{Fra Nødprocedurer til Stabilisering}
+
+\begin{itemize}
+\tightlist
+\item
+  Kritiske systemer genetableres eller erstatninger er implementeret.
+\item
+  Kommunikationen til interessenter er genetableret.
+\item
+  Der foreligger en plan for at migrere tilbage til normale
+  forretningsgange.
+\item
+  Personaletrivsel er under kontrol, og der er kapacitet til at
+  påbegynde normalisering.
+\end{itemize}
+
+\begin{quote}
+\emph{Denne plan skal gennemgås og opdateres mindst én gang årligt eller
+ved væsentlige ændringer i trusselsbilledet.}
+\end{quote}
 
 \newpage
 
