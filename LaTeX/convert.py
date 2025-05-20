@@ -29,7 +29,7 @@ FILE_ORDER = [
     '../fase-3-blød-overgang.md',
     '../fase-4-akut-overgang.md',
     '../fase-5-systemfejl-og-nødprocedurer.md',
-    '../faseovergang-og-eskalyypationskriterier.md',
+    '../faseovergang-og-eskalationskriterier.md',
     '../LICENSE.md'
 ]
 
@@ -138,9 +138,22 @@ def convert_md_to_tex():
             with open(filepath, 'r', encoding='utf-8') as f:
                 content = f.read()
 
-            # Convert markdown to LaTeX
-            is_first_file = (i == 0)  # README is the first file
-            latex_content = convert_markdown_to_latex(content, is_first_file)
+            if i == 0:
+                import re
+                content = re.sub(
+                    r"^#\s+.*",
+                    "# Introduktion",
+                    content,
+                    count=1,
+                    flags=re.MULTILINE)
+
+                content = re.sub(r"!\[.*?\]\(.*?\)", "", content)
+
+                split_marker = "## 📚 Indholdsfortegnelse"
+                if split_marker in content:
+                    content = content.split(split_marker)[0].strip()
+
+            latex_content = convert_markdown_to_latex(content)
 
             chapters.append(latex_content)
             logger.info(f"Processed {filepath}")
