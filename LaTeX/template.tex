@@ -1,4 +1,6 @@
-\documentclass[a4paper,11pt]{book}
+\documentclass[a4paper,11pt,oneside]{book}
+
+\newcommand{\doctitle}{Plan for Digital Resiliens og Suverænitet}
 
 \usepackage[danish]{babel}  % Danish language support
 
@@ -16,6 +18,7 @@
 \usepackage{geometry}       % Page geometry
 \usepackage{graphicx}       % Images
 \usepackage{hyperref}       % Hyperlinks
+\selectlanguage{danish}
 \usepackage{xcolor}         % Colors
 \usepackage{titlesec}       % Title formatting
 \usepackage{enumitem}       % List customization
@@ -49,7 +52,7 @@
     urlcolor=accent,
     citecolor=secondary,
     pdfauthor={IT-Beredskab},
-    pdftitle={IT-Beredskabsplan},
+    pdftitle={\doctitle},
     pdfsubject={Beredskabsplan for IT-systemer},
     pdfkeywords={IT, beredskab, krise, planlægning}
 }
@@ -74,10 +77,12 @@
 % Headers and footers
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
-\fancyhead[LO]{\textit{\nouppercase{\rightmark}}}
-\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L,L]{\textit{\doctitle}} % Left: document title
+\fancyhead[R,R]{\textit{\nouppercase{\leftmark}}}  % Right: chapter title
+\fancyfoot[C]{\thepage}
+% Remove line below if "Kapitel X. {chapter title}" is wanted
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\headrulewidth}{.4pt}
 \renewcommand{\footrulewidth}{0pt}
 
 % Box for important notes
@@ -114,6 +119,10 @@
     stringstyle=\color{accent}
 }
 
+% Undefines tightlist, which is defined by Pandoc when
+% not having blank lines between listitems in markdown
+\def\tightlist{}
+
 % Begin document
 \begin{document}
 
@@ -121,23 +130,25 @@
 \begin{titlepage}
     \centering
     \vspace*{2cm}
-    {\Huge\bfseries IT-Beredskabsplan\par}
+    {\Huge\bfseries \doctitle\par}
     \vspace{1cm}
-    {\Large En planlægningsmetode ved tab af adgang til IT-systemer\par}
+    {\Large En beredskabsplan for tab af adgang til amerikanske IT-systemer\par}
     \vspace{2cm}
-    
+
     \vspace{2cm}
     {\Large\itshape En fem-faset plan for krisehåndtering\par}
     \vfill
-    
+
     % Bottom of the page
     {\large \today\par}
 \end{titlepage}
 
+\frontmatter
 % Table of contents
 \tableofcontents
 \newpage
 
+\mainmatter
 % Main content - will be replaced by the Python script
 {{CONTENT}}
 
