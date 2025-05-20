@@ -8,7 +8,6 @@ compiles them into a single PDF using LaTeX.
 """
 
 import os
-import re
 import subprocess
 import shutil
 from pathlib import Path
@@ -52,36 +51,36 @@ def ensure_directories():
 def remove_navigation_text(text):
     """
     Remove navigation text links from a markdown string.
-    
+
     The function looks for patterns like:
     | [« Oversigt](faser-i-beredskabsplanen.md) | [Næste: Fase 2 »](fase-2-planlægningsfase.md) |
     |:------------------------------------------|----------------------------------------------:|
-    
+
     Args:
         text (str): The input text to filter
-        
+
     Returns:
         str: Text with navigation elements removed
     """
     import re
-    
+
     # Pattern for navigation table with links
     # This pattern matches markdown table rows containing navigation links
     nav_pattern = r'\|\s*\[.*?\]\(.*?\)\s*\|\s*\[.*?\]\(.*?\)\s*\|\s*\n\|[\s:\-]*\|[\s:\-]*\|'
-    
+
     # Remove the navigation text
     filtered_text = re.sub(nav_pattern, '', text)
-    
+
     return filtered_text
 
 def convert_markdown_to_latex(markdown_content, output_file=None):
     """Convert markdown to LaTeX using Pandoc
-    
+
     Args:
         markdown_content (str): The markdown content to convert
         output_file (str, optional): Path to save the output LaTeX file.
             If None, returns the LaTeX content as a string.
-            
+
     Returns:
         Union[bool, str]: If output_file is provided, returns True on success.
             Otherwise returns the LaTeX content as a string.
@@ -92,19 +91,19 @@ def convert_markdown_to_latex(markdown_content, output_file=None):
     # Write content to a temporary file
     with open('temp_input.md', 'w', encoding='utf-8') as f:
         f.write(markdown_content)
-    
+
     try:
         # Run pandoc to convert
         cmd = [
-            'pandoc', 
-            '-f', 
-            'markdown', 
-            '-t', 
-            'latex', 
-            'temp_input.md', 
+            'pandoc',
+            '-f',
+            'markdown',
+            '-t',
+            'latex',
+            'temp_input.md',
             '--top-level-division=chapter'
         ]
-        
+
         if output_file:
             cmd.extend(['-o', output_file])
             subprocess.run(cmd, check=True)
@@ -116,56 +115,56 @@ def convert_markdown_to_latex(markdown_content, output_file=None):
         # Clean up temporary file
         if os.path.exists('temp_input.md'):
             os.remove('temp_input.md')
-    
+
     return result
 
 def convert_md_to_tex():
     """Convert Markdown files to LaTeX content"""
     logger.info("Starting Markdown to LaTeX conversion")
-    
+
     chapters = []
-    
+
     # Read the template
     with open(LATEX_TEMPLATE, 'r', encoding='utf-8') as f:
         template = f.read()
-    
+
     # Process each file in order
     for i, filepath in enumerate(FILE_ORDER):
         try:
             if not os.path.exists(filepath):
                 logger.warning(f"File not found: {filepath} - skipping")
                 continue
-                
+
             with open(filepath, 'r', encoding='utf-8') as f:
                 content = f.read()
-            
+
             # Convert markdown to LaTeX
             is_first_file = (i == 0)  # README is the first file
             latex_content = convert_markdown_to_latex(content, is_first_file)
-            
+
             chapters.append(latex_content)
             logger.info(f"Processed {filepath}")
-            
+
         except Exception as e:
             logger.error(f"Error processing {filepath}: {str(e)}")
-    
+
     # Combine all chapters
     document_content = '\n\\newpage\n\n'.join(chapters)
-    
+
     # Insert content into template
     latex_document = template.replace('{{CONTENT}}', document_content)
-    
+
     # Write the combined LaTeX file
     with open(TEX_FILE, 'w', encoding='utf-8') as f:
         f.write(latex_document)
-    
+
     logger.info(f"LaTeX document written to {TEX_FILE}")
     return TEX_FILE
 
 def compile_latex_to_pdf(tex_file):
     """Compile the LaTeX file to PDF using pdflatex (more commonly available than xelatex)"""
     logger.info("Compiling LaTeX to PDF...")
-    
+
     try:
         # First try pdflatex (more commonly available)
         latex_cmd = 'pdflatex'
@@ -186,9 +185,9 @@ def compile_latex_to_pdf(tex_file):
                 except subprocess.CalledProcessError:
                     logger.error("No LaTeX compiler (pdflatex, xelatex, or lualatex) found")
                     return False
-        
+
         logger.info(f"Using {latex_cmd} compiler")
-        
+
         # Run LaTeX compiler twice to resolve references
         for i in range(2):
             process = subprocess.run(
@@ -197,23 +196,23 @@ def compile_latex_to_pdf(tex_file):
                 text=True,
                 check=False
             )
-            
+
             if process.returncode != 0:
                 logger.error(f"LaTeX compilation error: {process.stderr}")
                 with open(os.path.join(OUTPUT_DIR, 'compile_error.log'), 'w', encoding='utf-8') as f:
                     f.write(process.stderr)
                 return False
-        
+
         # Generate table of contents with hyperrefs
         subprocess.run(
             [latex_cmd, '-interaction=nonstopmode', '-output-directory=' + OUTPUT_DIR, tex_file],
             capture_output=True,
             check=False
         )
-        
+
         logger.info(f"PDF successfully generated at {PDF_FILE}")
         return True
-    
+
     except Exception as e:
         logger.error(f"Error during PDF compilation: {str(e)}")
         return False
@@ -221,10 +220,10 @@ def compile_latex_to_pdf(tex_file):
 def main():
     """Main function to convert Markdown to PDF"""
     logger.info("Starting conversion process")
-    
+
     ensure_directories()
     tex_file = convert_md_to_tex()
-    
+
     if compile_latex_to_pdf(tex_file):
         logger.info("Conversion completed successfully!")
     else:

@@ -5,7 +5,6 @@
 
 Dette dokument definerer konkrete kriterier og observationer, som udløser overgangen mellem faserne i kriseberedskabsplanen. Målet er at sikre rettidig reaktion baseret på faktuelle forhold og risikovurderinger.
 
----
 
 ## Overgang fra Fase 1 ➔ Fase 2
 
@@ -16,7 +15,6 @@ Dette dokument definerer konkrete kriterier og observationer, som udløser overg
 - Interne tekniske vurderinger viser høj afhængighed af amerikanske eller eksterne leverandører.
 - Ledelsen beslutter proaktivt at igangsætte planlægning for øget robusthed.
 
----
 
 ## Overgang fra Fase 2 ➔ Fase 3
 
@@ -27,7 +25,6 @@ Dette dokument definerer konkrete kriterier og observationer, som udløser overg
 - Nye trusselsvurderinger hæver sandsynligheden for leverandøraftaler ophører.
 - IT-ledelsen vurderer, at systemkritiske funktioner har utilstrækkelig resiliens.
 
----
 
 ## Overgang fra Fase 3 ➔ Fase 4
 
@@ -39,7 +36,6 @@ Dette dokument definerer konkrete kriterier og observationer, som udløser overg
 - Øget risiko for datatab, sikkerhedsbrud eller tab af adgang til nødvendige forretningssystemer.
 - Direktion beslutter at aktivere Fase 4 for at sikre drift under tidspres.
 
----
 
 ## Overgang fra Fase 4 ➔ Fase 5
 
@@ -50,7 +46,6 @@ Dette dokument definerer konkrete kriterier og observationer, som udløser overg
 - Kommunikation via digitale kanaler bryder fuldstændigt sammen.
 - Der er opstået fysisk sikkerhedstrussel eller omfattende forsyningssvigt.
 
----
 
 ## Overgang fra Fase 5 ➔ Genetablering af Normal Drift
 
@@ -61,7 +56,6 @@ Dette dokument definerer konkrete kriterier og observationer, som udløser overg
 - Der foreligger en plan for at migrere tilbage til normale forretningsgange.
 - Personaletrivsel er under kontrol, og der er kapacitet til at påbegynde normalisering.
 
----
 
 > _Denne plan skal gennemgås og opdateres mindst én gang årligt eller ved væsentlige ændringer i trusselsbilledet._
 
