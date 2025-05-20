@@ -1,10 +1,18 @@
 \documentclass[a4paper,11pt]{book}
 
-% Required packages
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage[danish]{babel}  % Danish language support
-\usepackage{lmodern}        % Modern Latin font
+
+\usepackage{iftex}          % Check LaTeX-engine
+\ifpdftex
+  \usepackage{libertine}
+  \usepackage{libertinust1math}
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else
+  \usepackage{fontspec}
+  \setmainfont{Linux Libertine O}[Ligatures=TeX,Scale=1]
+\fi
+
 \usepackage{geometry}       % Page geometry
 \usepackage{graphicx}       % Images
 \usepackage{hyperref}       % Hyperlinks

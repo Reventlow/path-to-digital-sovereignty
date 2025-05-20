@@ -197,24 +197,24 @@ def convert_md_to_tex():
     return TEX_FILE
 
 def compile_latex_to_pdf(tex_file):
-    """Compile the LaTeX file to PDF using pdflatex (more commonly available than xelatex)"""
+    """Compile the LaTeX file to PDF using lualatex (fallback: xelatex then pdflatex)"""
     logger.info("Compiling LaTeX to PDF...")
 
     try:
-        # First try pdflatex (more commonly available)
-        latex_cmd = 'pdflatex'
-        
-        # Check if pdflatex is available
+        # First try lualatex (successor to pdflatex)
+        latex_cmd = 'lualatex'
+
+        # Check if lualatex is available
         try:
             subprocess.run(['which', latex_cmd], check=True, capture_output=True)
         except subprocess.CalledProcessError:
-            # If pdflatex is not available, try xelatex
+            # If lualatex is not available, try xelatex
             latex_cmd = 'xelatex'
             try:
                 subprocess.run(['which', latex_cmd], check=True, capture_output=True)
             except subprocess.CalledProcessError:
-                # If neither is available, try lualatex
-                latex_cmd = 'lualatex'
+                # If neither is available, fallback to pdflatex
+                latex_cmd = 'pdflatex'
                 try:
                     subprocess.run(['which', latex_cmd], check=True, capture_output=True)
                 except subprocess.CalledProcessError:
