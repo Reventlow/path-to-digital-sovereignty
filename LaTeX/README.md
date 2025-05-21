@@ -13,8 +13,8 @@ This directory contains the LaTeX converter that compiles all the Markdown docum
 0. If you use Nix: Run `nix-shell` and skip to step 3
 1. Make sure you have Python 3.6+ and LaTeX installed on your system
 2. Install dependencies: `pip install -r requirements.txt`
-3. Run the converter: `python convert.py`
-4. The compiled PDF will be created as `beredskabsplan.pdf`
+3. Run the converter: `python convert.py` to compile the PDF
+4. The PDF can now be located in the project root as `beredskabsplan.pdf`
 
 ## Dependencies
 
