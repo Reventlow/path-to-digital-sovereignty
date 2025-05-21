@@ -16,8 +16,10 @@ if ! command -v pip3 &> /dev/null; then
 fi
 
 # Check if LaTeX is installed
-if ! command -v xelatex &> /dev/null; then
-    echo "XeLaTeX is required but not installed."
+if ! command -v lualatex &> /dev/null \
+  || command -v xelatex &> /dev/null \
+  || command -v pdflatex &> /dev/null; then
+    echo "Missing LaTeX engine. LuaLaTeX, XeLaTeX or PDFLaTeX is required but not installed."
     echo "On Ubuntu/Debian: sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-lang-european"
     echo "On macOS with Homebrew: brew install --cask mactex"
     echo "On Windows: Install MiKTeX or TeX Live"
