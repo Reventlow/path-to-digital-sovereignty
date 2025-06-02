@@ -29,16 +29,18 @@ I denne fase er truslen om licens- eller tjenesteafbrydelse stadig usandsynlig, 
   - Netværksudstyr, telefoni og mobile løsninger (inkl. vurdering af afhængighed af Apple og Android enheder og mulige alternativer som Fairphone, /e/OS eller Linux-baserede systemer)
   - Backup-løsninger og lagring
   - Databaser
+  - Domæner (valg af registrar *og* top-level domæne)
   - DNS
   - Firmwareopdateringer (BIOS, UEFI, drivere og anden enhedsnær software med afhængighed af producentens infrastruktur)
   - Øvrige specialiserede applikationer afhængigt af organisationens behov, f.eks.:
 
     - AI-værktøjer
-    - Grafisk software
-    - Videoredigering
+    - Grafisk software (Krita, Inkscape, ..)
+    - Videoredigering (KDEnlive)
     - Overvågning og adgangskontrol
-    - CAD-software
+    - CAD-software (Blender, FreeCAD, LibreCAD, OpenSCAD, ..)
     - Social media-værktøjer (EU-venlige alternativer)
+    - Bygningsautomatisering, varme, køling, etc -- ESPHome / Home Assistant, Tango Controls, Shelly.com
 
 ## Teknologiske alternativer (eksempler)
 
@@ -48,12 +50,12 @@ I denne fase er truslen om licens- eller tjenesteafbrydelse stadig usandsynlig, 
 - **Kontorpakke:** LibreOffice, OnlyOffice eller Collabora
 - **E-mail:** Dovecot + Postfix, evt. i kombination med Nextcloud Kalender og Kontakter
 - **AD/Azure AD:** Keycloak og FreeIPA
-- **Cloud/SharePoint:** Nextcloud
-- **Kommunikation (Teams):** Jitsi og Matrix
+- **Cloud/SharePoint:** Nextcloud, Syncthing
+- **Kommunikation (Teams):** Jitsi, Matrix, Galene.org (self-hosted)
 - **GitHub:** Gitea eller selvhostet GitLab CE
-- **SCCM:** Ansible, shell-scripts eller Puppet
+- **SCCM:** Ansible, shell-scripts, Puppet, pyInfra
 - **ERP/Navision:** Odoo, Dolibarr, Tryton
-- **Database:** PostgreSQL, MariaDB, MySQL (alle open source og EU-venlige)
+- **Database:** PostgreSQL, MariaDB, MySQL, SQLite + Litestream.io (alle open source og EU-venlige)
 - **Backup-løsninger:** BorgBackup, Restic, Duplicity, eller Veeam med lokal lagring
 - **Mobile enheder:** Fairphone med /e/OS eller Ubuntu Touch, PinePhone, Librem 5
 
